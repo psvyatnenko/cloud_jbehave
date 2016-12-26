@@ -1,9 +1,9 @@
-package FF.Cloud;
+
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import FF.Cloud.steps.MySteps;
+import steps.MySteps;
 import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;

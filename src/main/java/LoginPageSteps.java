@@ -1,19 +1,21 @@
-package FF.Cloud.steps;
 
+
+import steps.MySteps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.openqa.selenium.By;
 import pages.LoginPage;
-import pages.OverViewPage;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class MySteps {
+public class LoginPageSteps extends MySteps {
 
-//    STEPS FOR LOGIN PAGE:
+    //    STEPS FOR LOGIN PAGE:
     LoginPage loginPage = new LoginPage();
-
     @Given("As user being on loginPage")
     public void givenAsUserBeingOnLoginPage(){
         loginPage.goToLoginPage();
@@ -30,17 +32,13 @@ public class MySteps {
         loginPage.clickOnSignInButton();
     }
 
-
-
-
-
-//    STEPS FOR OVERVIEW PAGE:
-    OverViewPage overViewPage = new OverViewPage();
-
     @Then("I can enter to overViewPage")
     public void thenICanEnterOverViewPage(){
-        overViewPage.checkOverViewPageTitle();
-//        overViewPage.checkOverViewPageUrl();
+
+        loginPage.checkLoginPageTitle();
+        loginPage.checkLoginPageUrl();
     }
+
+
 
 }
